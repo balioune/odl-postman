@@ -1,0 +1,66 @@
+{
+	"variables": [],
+	"info": {
+		"name": "unavailable capabilities demo",
+		"_postman_id": "9c4473f4-b37c-c4a8-7bde-50adda3eb245",
+		"description": "This collection was developed in conjunction with a demo of some of the new functionality added to ODL NETCONF in the Boron release.  This collection is provided in order to allow others to reproduce some of the work presented in the demo.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Mount config subsystem loopback",
+			"request": {
+				"url": "http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/xml",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<node xmlns=\"urn:TBD:params:xml:ns:yang:network-topology\">\n   <node-id>controller-config</node-id>\n   <host xmlns=\"urn:opendaylight:netconf-node-topology\">127.0.0.1</host>\n   <port xmlns=\"urn:opendaylight:netconf-node-topology\">1830</port>\n   <username xmlns=\"urn:opendaylight:netconf-node-topology\">admin</username>\n   <password xmlns=\"urn:opendaylight:netconf-node-topology\">admin</password>\n   <tcp-only xmlns=\"urn:opendaylight:netconf-node-topology\">false</tcp-only>\n   <keepalive-delay xmlns=\"urn:opendaylight:netconf-node-topology\">0</keepalive-delay>\n</node>"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get the operational network-topology",
+			"request": {
+				"url": "http://localhost:8181/restconf/operational/network-topology:network-topology",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
